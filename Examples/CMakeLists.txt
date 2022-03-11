@@ -1,2 +1,2 @@
 cmake_minimum_required(VERSION 3.0)
-add_subdirectory(0_draw_surface)
+add_subdirectory(CGALQtExamples)
