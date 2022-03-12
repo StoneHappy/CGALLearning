@@ -1,25 +1,16 @@
 cmake_minimum_required(VERSION 3.0)
 project(HelloWorld)
 
-############# hw_0_PointsSegment ################
-add_executable(hw_0_PointsSegment
-                                0_PointsSegment.cpp 
-            )
 
-target_link_libraries(hw_0_PointsSegment
-                    PUBLIC
-                                CGAL::CGAL CGAL::CGAL_Core
-)
+############# hw_0_PointsSegment ################
+AddCGALExecutable(hw_0_PointsSegment 0_PointsSegment.cpp)
 
 ############# hw_1_ArrayConvexHull ################
-add_executable(hw_1_ArrayConvexHull
-                                1_ArrayConvexHull.cpp
-            )
+AddCGALExecutable(hw_1_1_ArrayConvexHull 1_1_ArrayConvexHull.cpp)
 
-target_link_libraries(hw_1_ArrayConvexHull
-                    PUBLIC
-                                CGAL::CGAL CGAL::CGAL_Core
-)
+############# hw_1_2_VectorConvexHull ################
+AddCGALExecutable(hw_1_2_VectorConvexHull 1_2_VectorConvexHull.cpp)
+
 # target_include_directories(${PROJECT_NAME} PUBLIC
 #                                 ${CMAKE_CURRENT_SOURCE_DIR}
 #              )

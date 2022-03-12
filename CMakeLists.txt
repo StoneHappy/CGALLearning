@@ -16,6 +16,8 @@ if(MSVC)
     set(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} /subsystem:windows /entry:mainCRTStartup")
 endif()
 
+SET(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/CMakeModules;${CMAKE_MODULE_PATH}")
+INCLUDE(AddCGALExecutable)
 ######################### Add VENDORS_DIR #####################
 set(VENDORS_DIR ${CMAKE_SOURCE_DIR}/Vendors)
 
