@@ -31,7 +31,7 @@ set(CMAKE_AUTOUIC_SEARCH_PATHS "${VCPKG_INCLUDE_DIR}/CGAL/Qt/resources")
 # 定义CGAL数据地址
 add_definitions(-DCGAL_DATA_DIR="E:/learning/cgal/Data/data")
 #CGAL_Qt5 is needed for the drawing.
-find_package(CGAL REQUIRED OPTIONAL_COMPONENTS Qt5)
+find_package(CGAL REQUIRED OPTIONAL_COMPONENTS Qt5 Core)
 if(CGAL_Qt5_FOUND)
   message("CGAL QT FOUND")
 endif()
