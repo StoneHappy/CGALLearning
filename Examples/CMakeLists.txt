@@ -3,4 +3,7 @@ add_subdirectory(CGALQtExamples)
 
 add_subdirectory(HelloWorld)
 
+################## Surface Mesh ###################
+add_subdirectory(SurfaceMesh)
+
 add_subdirectory(HoleFiller)
