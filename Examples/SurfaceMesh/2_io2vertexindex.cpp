@@ -4,6 +4,8 @@
 #include <fstream>
 #include <vector>
 #include <time.h>
+#include <iostream>
+#include "Core/Core.h"
 typedef CGAL::Simple_cartesian<double>                       Kernel;
 typedef Kernel::Point_3                                      Point;
 typedef CGAL::Surface_mesh<Point>                            Mesh;
@@ -15,7 +17,8 @@ int main(int argc, char* argv[])
   Mesh sm;
   DWORD dwStart, dwEnd, deltaTime;
   dwStart = GetTickCount();
-  if(!CGAL::IO::read_polygon_mesh("E:/learning/Editor/Resources/Models/scene_mesh_refine.ply", sm))
+  auto path = g_DataPath/"scene_mesh_refine.ply";
+  if(!CGAL::IO::read_polygon_mesh( path.string(), sm))
   {
     std::cerr << "Invalid input file." << std::endl;
     return EXIT_FAILURE;

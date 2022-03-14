@@ -6,7 +6,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
 # vcpkg include目录
-set(VCPKG_INCLUDE_DIR E:/softwares/vcpkg/installed/x64-windows-static/include)
+# set(VCPKG_INCLUDE_DIR E:/softwares/vcpkg/installed/x64-windows-static/include)
 if(MSVC)
     message("Compiler: MSVC")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W4 /source-charset:utf-8 /execution-charset:gbk /std:c++17")
@@ -31,11 +31,16 @@ endif()
 # 寻找让MOC找到ui文件
 set(CMAKE_AUTOUIC_SEARCH_PATHS "${VCPKG_INCLUDE_DIR}/CGAL/Qt/resources")
 # 定义CGAL数据地址
-add_definitions(-DCGAL_DATA_DIR="E:/learning/cgal/Data/data")
+add_definitions(-DCGAL_DATA_DIR="${CGAL_DATA}")
+message("${TEST_DATA_DIR}")
+add_definitions(-DTEST_DATA_DIR="${TEST_DATA_DIR}")
 #CGAL_Qt5 is needed for the drawing.
 find_package(CGAL REQUIRED OPTIONAL_COMPONENTS Qt5 Core)
 if(CGAL_Qt5_FOUND)
   message("CGAL QT FOUND")
 endif()
-# Editor static lib
+
+# Core 核心
+add_subdirectory(Core)
+# 案例
 add_subdirectory(Examples)
